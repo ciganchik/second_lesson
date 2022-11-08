@@ -16,4 +16,6 @@
     <string name="minus">-</string>
     <string name="mult">x</string>
     <string name="dive">/</string>
+    <string name="del">AC</string>
+    <string name="equals">=</string>
 </resources>
