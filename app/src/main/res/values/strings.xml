@@ -18,4 +18,8 @@
     <string name="dive">/</string>
     <string name="del">AC</string>
     <string name="equals">=</string>
+    <string name="btn_percent">%</string>
+    <string name="btn_plus_minus">+/-</string>
+    <string name="material_dark">Темная тема</string>
+    <string name="material_light">Светлая тема</string>
 </resources>

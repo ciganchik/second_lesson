@@ -16,7 +16,6 @@ public class CalculatorPresenter {
     private boolean isSecond;
     private boolean isEquals;
     private Operator selectedOperator;
-    private final DecimalFormat formatter = new DecimalFormat();
 
     public CalculatorPresenter(CalculatorView view, Calculator calculator) {
         this.view = view;
@@ -62,7 +61,7 @@ public class CalculatorPresenter {
         argTwo = 0.0;
         selectedOperator = operator;
         isSecond = true;
-        numberAfterPoint=null;
+        numberAfterPoint = null;
         isEquals = false;
     }
 
@@ -83,7 +82,6 @@ public class CalculatorPresenter {
             argOne = calculator.perform(argOne, argTwo, selectedOperator);
             showFormatted(argOne);
         }
-        argOne = 0.0;
         argTwo = 0.0;
         selectedOperator = operator;
         isSecond = false;
@@ -109,4 +107,31 @@ public class CalculatorPresenter {
         view.showResult(format.format(value));
     }
 
+    public void onChangeSing() {
+        if (!isSecond){
+            if (argOne >= 1 || argOne <=1){
+                argOne = argOne * (-1);
+                showFormatted(argOne);
+            }
+        } else if (isSecond) {
+            if (argTwo >= 1 || argTwo <=1){
+                argTwo=argTwo * (-1);
+                showFormatted(argTwo);
+            }
+        }
+}
+
+    public void onPercentPressed() {
+        if (!isSecond){
+            if (argOne >= 1 || argOne <=1){
+                argOne = argOne / 100;
+                showFormatted(argOne);
+            }
+        } else if (isSecond) {
+            if (argTwo >= 1 || argTwo <=1){
+                argTwo=argTwo / 100;
+                showFormatted(argTwo);
+            }
+        }
+    }
 }
