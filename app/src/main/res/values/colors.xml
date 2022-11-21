@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_colorDark">#0E0D0D</color>
-    <color name="background_colorLight">#0E0D0D</color>
+    <color name="background_colorLight">#FFFFFF</color>
     <color name="usual_btnDark">#383838</color>
     <color name="main_btn">#171D5D</color>
     <color name="dop_btn">#8B8888</color>

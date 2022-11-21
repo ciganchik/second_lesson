@@ -12,9 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-
     </style>
-
 
 
     <style name="usual_button" parent="AppTheme">
@@ -25,6 +23,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">70sp</item>
     </style>
+
     <style name="main_button" parent="AppTheme">
         <item name="android:backgroundTint">@color/main_btn</item>
         <item name="cornerRadius">360sp</item>
@@ -33,4 +32,6 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">70sp</item>
     </style>
+
+
 </resources>

@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
         setContentView(R.layout.activity_main);
 
         resultTxt = findViewById(R.id.display);
-//        resultHistory = findViewById(R.id.history);
         presenter = new CalculatorPresenter(this, new CalculatorImpl());
 
 /**
@@ -120,6 +119,26 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
             }
         });
 
+/**
+ * ПОИСК И ПРИСВОЕНИЕ ФУНКЦИИ ДЛЯ ИЗМЕНЕНИЯ ЗНАКА
+  */
+
+        findViewById(R.id.button_plus_minus).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.onChangeSing();
+            }
+        });
+
+
+        findViewById(R.id.button_percent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.onPercentPressed();
+                String percent = (String) resultTxt.getText();
+                resultTxt.setText(percent + "%");
+            }
+        });
 
 
     }
