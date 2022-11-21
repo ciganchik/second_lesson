@@ -1,6 +1,8 @@
 package com.example.calculator.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -19,13 +21,14 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
 
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         resultTxt = findViewById(R.id.display);
-
+//        resultHistory = findViewById(R.id.history);
         presenter = new CalculatorPresenter(this, new CalculatorImpl());
 
 /**
@@ -95,12 +98,20 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
             }
         });
 
+/**
+ * ПОИСК И ПРИСВОЕНИЯ ФУНКЦИИ ДЛЯ РАВНО
+ */
+
         findViewById(R.id.button_equals).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 presenter.onDefPressed(operators.get(view.getId()));
             }
         });
+
+/**
+ * ПОИСК И ПРИСВОЕНИЯ ФУНКЦИИ ДЛЯ УДАЛИТЬ
+ */
 
         findViewById(R.id.button_del).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,10 +120,15 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
             }
         });
 
+
+
     }
+
+
 
     @Override
     public void showResult(String result) {
         resultTxt.setText(result);
     }
+
 }

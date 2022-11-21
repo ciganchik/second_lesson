@@ -16,7 +16,6 @@ public class CalculatorPresenter {
     private boolean isSecond;
     private boolean isEquals;
     private Operator selectedOperator;
-    private final DecimalFormat formatter = new DecimalFormat();
 
     public CalculatorPresenter(CalculatorView view, Calculator calculator) {
         this.view = view;
@@ -64,6 +63,7 @@ public class CalculatorPresenter {
         isSecond = true;
         numberAfterPoint=null;
         isEquals = false;
+
     }
 
     public void onDotPressed() {
@@ -108,5 +108,4 @@ public class CalculatorPresenter {
             pattern.append("0");
         view.showResult(format.format(value));
     }
-
 }
